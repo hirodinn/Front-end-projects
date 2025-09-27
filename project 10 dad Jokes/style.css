@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  background-color: steelblue;
+  height: 100vh;
+}
+.container {
+  width: 95%;
+  max-width: 700px;
+  min-height: 300px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  padding: 40px;
+}
+.heading {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+.get-another-joke {
+  background-color: rgb(238, 130, 238);
+  border: 10px;
+  width: 50%;
+  padding: 13px 25px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 30px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.get-another-joke:hover {
+  background-color: rgb(231, 102, 231);
+}
+.get-another-joke:active {
+  transform: scale(0.98);
+}
+.get-another-joke:focus {
+  outline: none;
+}
+h2 {
+  margin-top: 30px;
+  font-size: 30px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
