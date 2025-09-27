@@ -1,7 +1,8 @@
+const jokeEl = document.querySelector(".joke");
+const getAnotherButton = document.querySelector(".get-another-joke");
 function renderRandomJoke(joke) {
-  document.querySelector(".joke").innerText = joke;
+  jokeEl.innerText = joke;
 }
-
 async function loadJoke() {
   const textJson = await fetch("https://icanhazdadjoke.com/", {
     headers: {
@@ -12,6 +13,6 @@ async function loadJoke() {
   renderRandomJoke(text.joke);
 }
 loadJoke();
-document.querySelector(".get-another-joke").addEventListener("click", () => {
+getAnotherButton.addEventListener("click", () => {
   loadJoke();
 });
