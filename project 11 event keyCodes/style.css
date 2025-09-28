@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Muli, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  background-color: lightgray;
+}
+.info {
+  background-color: white;
+  border: 2px solid gray;
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.hidden {
+  display: none !important;
+}
+.button-container {
+  display: flex;
+  height: 60px;
+  justify-content: center;
+}
+.button {
+  position: relative;
+  margin: 7px;
+  min-width: 160px;
+  font-size: 20px;
+  background-color: white;
+  border: 2px solid gray;
+}
+.button::before {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+  font-size: 14px;
+}
+.button-1::before {
+  content: "event_key";
+}
+.button-2::before {
+  content: "event_keyCode";
+}
+.button-3::before {
+  content: "event_code";
+}
