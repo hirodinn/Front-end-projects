@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  margin: 0;
+  background-color: lightgray;
+}
+.question-container {
+  border: 1px solid gray;
+  min-width: 600px;
+  padding: 30px;
+  margin: 10px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px gray;
+  transition: all 0.2s linear;
+  overflow: hidden;
+}
+.show-button,
+.hide-button {
+  border: none;
+  display: block;
+  background: transparent;
+  font-size: 1em;
+  cursor: pointer;
+  position: absolute;
+  height: 28px;
+  min-width: 28px;
+  display: block;
+  text-align: center;
+  top: calc(50% - 10px);
+  right: 10px;
+}
+.hidden {
+  display: none;
+}
+.opened {
+  background-color: white;
+  box-shadow: 2px 2px 6px gray;
+}
+.opened button {
+  background-color: gray;
+  border-radius: 50%;
+  padding: 6px;
+  color: white;
+}
+.opened .answer {
+  margin-top: 30px;
+}
+.opened::before,
+.opened::after {
+  content: "\f075";
+  font-family: "Font Awesome 6 Free";
+  position: absolute;
+  color: #2ecc70;
+  opacity: 0.5;
+  font-size: 7em;
+  z-index: 0;
+}
+.opened::before {
+  color: #3498db;
+  top: -25px;
+  left: -25px;
+  transform: scaleX(-1) rotate(-3deg);
+}
+.opened::after {
+  bottom: 0;
+  left: 17px;
+}
+button:focus {
+  outline: none;
+}
