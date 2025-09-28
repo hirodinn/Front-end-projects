@@ -11,7 +11,8 @@ clearButton.addEventListener("click", () => {
 
 let size = 20;
 let color = "black";
-
+let initialX;
+let initialY;
 increaseButton.addEventListener("click", () => {
   if (size === 50) return;
   size += 5;
@@ -36,14 +37,22 @@ function drawCircle(x, y) {
   ctx.fill();
 }
 canvas.addEventListener("mousedown", (e) => {
+  initialX = e.offsetX;
+  initialY = e.offsetY;
   canvas.addEventListener("mousemove", paint);
 });
 canvas.addEventListener("mouseup", (e) => {
+  initialX = undefined;
+  initialY = undefined;
   canvas.removeEventListener("mousemove", paint);
 });
 function paint(e) {
   drawCircle(e.offsetX, e.offsetY);
+  drawLine(initialX, initialY, e.offsetX, e.offsetY);
+  initialX = e.offsetX;
+  initialY = e.offsetY;
 }
+
 function drawLine(x1, y1, x2, y2) {
   ctx.beginPath();
   ctx.moveTo(x1, y1);
