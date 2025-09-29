@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-  --transition-delay-hide: 0s;
-  --transition-length-hide: 0s;
-  --transition-length-show: 0s;
-  --rotate-left: 0deg;
-  --rotate-right: 0deg;
-}
-
 * {
   box-sizing: border-box;
 }
