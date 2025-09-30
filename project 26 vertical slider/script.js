@@ -1,7 +1,7 @@
 const up = document.querySelector(".up");
 const down = document.querySelector(".down");
-const infos = document.querySelectorAll(".info");
-const images = document.querySelectorAll(".image");
+const info = document.querySelector(".info-container");
+const image = document.querySelector(".image-container");
 let currentIndex = 0;
 up.addEventListener("click", () => {
   if (currentIndex == 3) currentIndex = 0;
@@ -16,20 +16,10 @@ down.addEventListener("click", () => {
   updateImage();
 });
 function updateInfo() {
-  infos.forEach((info, i) => {
-    if (i < currentIndex) info.style.top = `${(currentIndex - i) * 100}vh`;
-    else if (i == currentIndex) info.style.top = "0";
-    else info.style.top = `-${(i - currentIndex) * 100}vh`;
-    console.log(info.style.top);
-  });
+  info.style.transform = `translateY(-${currentIndex * 100}vh)`;
 }
 function updateImage() {
-  images.forEach((image, i) => {
-    if (i < currentIndex) image.style.bottom = `${(currentIndex - i) * 100}vh`;
-    else if (i == currentIndex) image.style.bottom = "0";
-    else image.style.bottom = `-${(i - currentIndex) * 100}vh`;
-    console.log(image.style.bottom);
-  });
+  image.style.transform = `translateY(-${300 - currentIndex * 100}vh)`;
 }
 updateInfo();
 updateImage();
