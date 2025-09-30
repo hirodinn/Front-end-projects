@@ -5,11 +5,12 @@ options.forEach((option, i) => {
   });
 });
 function selectOptionsTill(n) {
-  if (
-    options[n].classList.contains("selected") &&
-    !options[n].nextElementSibling.classList.contains("selected")
-  ) {
-    n--;
+  if (options[n].classList.contains("selected")) {
+    if (
+      n === 7 ||
+      !options[n].nextElementSibling.classList.contains("selected")
+    )
+      n--;
   }
   options.forEach((option, i) => {
     if (i <= n) option.classList.add("selected");
