@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+  --filled: rgb(96, 190, 221);
+  --container-border: rgb(5, 128, 230);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: steelblue;
+  color: white;
+}
+.water-container {
+  height: 400px;
+  width: 100px;
+  overflow: hidden;
+  border: 3px solid var(--container-border);
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.water-container div {
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+}
+.water-container .filled {
+  height: 0%;
+  background-color: var(--filled);
+  color: white;
+}
+.water-container .unfilled h3 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.water-container .unfilled p {
+  margin: 0;
+}
+.water-container .unfilled {
+  background-color: white;
+  color: var(--filled);
+}
+
+.option-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  gap: 10px;
+  min-width: 200px;
+}
+.option-container .option {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: white;
+  border: 2px solid var(--container-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--filled);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.option-container .option.selected {
+  background-color: var(--filled);
+  color: white;
+}
