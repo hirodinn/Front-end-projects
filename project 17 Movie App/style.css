@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+:root {
+  --body-background: #22254b;
+  --element-background: #373b68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--body-background);
+}
+.search-bar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: var(--element-background);
+  border-radius: 0 0 16px 16px;
+}
+.search-bar input {
+  background-color: var(--element-background);
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px;
+  color: white;
+}
+.search-bar input:focus {
+  outline: none;
+  background-color: var(--body-background);
+}
+.movie-container {
+  margin-top: 70px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 500px;
+  gap: 10px;
+  padding: 2%;
+  height: 100%;
+}
+.movie {
+  border-radius: 0 0 10px 10px;
+  background-color: var(--element-background);
+  position: relative;
+  overflow: hidden;
+}
+.movie img {
+  width: 100%;
+}
+.movie .description-container {
+  position: absolute;
+  transition: transform 0.3s ease-in;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(207, 205, 205);
+  transform: translateY(101%);
+  font-size: 13px;
+  padding: 5px;
+}
+.movie .info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: white;
+}
+.movie .info-container h4 {
+  margin-right: 10px;
+}
+.movie .info-container p {
+  font-weight: bold;
+  font-size: 19px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+.movie:hover .description-container {
+  transform: translateY(0);
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1200px) {
+  .movie-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .movie-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
