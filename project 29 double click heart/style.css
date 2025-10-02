@@ -22,12 +22,13 @@ h4 {
 }
 .image-container {
   position: relative;
+  display: inline-block;
 }
 .heart {
   position: absolute;
   animation: bigger 0.7s;
   opacity: 0;
-  top: 0;
+  pointer-events: none;
 }
 @keyframes bigger {
   0% {
