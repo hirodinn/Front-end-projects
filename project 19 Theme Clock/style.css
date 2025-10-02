@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:300&display=swap");
+:root {
+  --arrrow-color: black;
+  --text-color: white;
+  --button-background: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Heebo, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding-top: 100px;
+  background-color: var(--text-color);
+  transition: background-color 0.3s;
+}
+body.dark {
+  --arrrow-color: white;
+  --text-color: black;
+  --button-background: white;
+}
+.mode {
+  background-color: var(--button-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+.clock-container {
+  height: 500px;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.circle {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  border-radius: 50%;
+}
+.circle .hour {
+  width: 90px;
+  height: 2px;
+  background-color: var(--arrrow-color);
+  position: absolute;
+  left: 200px;
+  bottom: 200px;
+  transform-origin: 0 center;
+  border-radius: 0 20px 20px 0;
+  transition: color 0.3s;
+}
+.circle .minute {
+  width: 130px;
+  height: 2px;
+  background-color: var(--arrrow-color);
+  position: absolute;
+  left: 200px;
+  bottom: 200px;
+  transform-origin: 0 center;
+  transition: color 0.3s;
+}
+.circle .second {
+  width: 170px;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  left: 200px;
+  bottom: 200px;
+  transform-origin: 0 center;
+  /* transition: 1s linear; */
+}
+.circle .red-dot {
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 192px;
+  bottom: 192px;
+  z-index: 3;
+}
+.circle .red-dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: var(--arrrow-color);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 4;
+  left: 8px;
+  top: 8px;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.3;
+}
+.time {
+  color: var(--arrrow-color);
+  transition: 0.3s;
+  font-size: 40px;
+}
+.day {
+  color: var(--arrrow-color);
+  font-size: 10px;
+  opacity: 0.7;
+  transition: color 0.3s;
+}
+.day span {
+  color: var(--text-color);
+  background-color: var(--arrrow-color);
+  border-radius: 50%;
+  padding: 5px;
+  transition: all 0.3s;
+}
