@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  background-color: steelblue;
+}
+
+.empty {
+  background-color: white;
+  border: none;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+}
+.fill {
+  background-image: url("https://source.unsplash.com/random/150x150");
+  width: 145px;
+  height: 145px;
+  cursor: pointer;
+}
+
+.empty.hover {
+  background-color: black;
+  border: 2px dashed white;
+}
