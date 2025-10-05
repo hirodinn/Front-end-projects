@@ -23,14 +23,8 @@ async function getPokemon(id) {
 async function load() {
   const container = document.querySelector(".container");
 
-  const promises = [];
   for (let i = 1; i <= 150; i++) {
-    promises.push(getPokemon(i));
-  }
-
-  const allPokemon = await Promise.all(promises);
-
-  allPokemon.forEach((data) => {
+    const data = await getPokemon(i);
     const type = data.types[0].type.name;
     const color = typeColors[type] || "#777";
 
@@ -48,7 +42,10 @@ async function load() {
           `;
 
     container.appendChild(el);
-  });
+    await sleep(500);
+  }
 }
-
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 load();
