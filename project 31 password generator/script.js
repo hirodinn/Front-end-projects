@@ -59,3 +59,11 @@ function assignQuota(n, total) {
   return arr;
 }
 
+const copyButton = document.querySelector(".icon");
+copyButton.addEventListener("click", () => {
+  navigator.clipboard
+    .writeText(passwordText.innerText)
+    .then(() => alert("Copied to clipboard!"))
+    .catch((err) => console.error("Failed to copy:", err));
+});
+
