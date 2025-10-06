@@ -23,7 +23,7 @@ async function loadRepository(username) {
   }
 
   const res = await response.json();
-    const repoResponse = await fetch(
+  const repoResponse = await fetch(
     `https://api.github.com/users/${username}/repos?sort=stars&per_page=5`,
     {
       headers: { Accept: "application/vnd.github+json" },
@@ -35,4 +35,34 @@ async function loadRepository(username) {
     repoData = await repoResponse.json();
   }
 
+  let repos = "";
+  if (repoData.length > 0) {
+    repos =
+      `<div class="repos">` +
+      repoData
+        .map(
+          (repo, i) =>
+            `<a href="${repo.clone_url}" target="_blank">Repo ${i + 1}: ${
+              repo.name
+            }</a>`
+        )
+        .join("<br/>") +
+      `</div>`;
+  } else {
+    repos = `<p>No repositories found</p>`;
+  }
 
+  element.innerHTML = `
+    <img src="${res.avatar_url}" alt="" />
+    <div class="info-container">
+      <div class="name">${res.name ?? username}</div>
+      <div class="description">${res.bio ?? ""}</div>
+      <div class="details">
+        <p>${res.followers} Followers</p>
+        <p>${res.following} Following</p>
+        <p>${res.public_repos} Repos</p>
+      </div>
+      ${repos}
+    </div>
+  `;
+}
