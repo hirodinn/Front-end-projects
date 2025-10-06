@@ -23,4 +23,16 @@ async function loadRepository(username) {
   }
 
   const res = await response.json();
+    const repoResponse = await fetch(
+    `https://api.github.com/users/${username}/repos?sort=stars&per_page=5`,
+    {
+      headers: { Accept: "application/vnd.github+json" },
+    }
+  );
+
+  let repoData = [];
+  if (repoResponse.ok) {
+    repoData = await repoResponse.json();
+  }
+
 
