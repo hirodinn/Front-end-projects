@@ -45,3 +45,41 @@ function addEventForDelete() {
   });
 }
 
+function loadNotes() {
+  container.innerHTML = "";
+  note.forEach((element) => {
+    const el = document.createElement("div");
+    el.classList.add("note-container");
+    el.innerHTML = `<div class="header">
+        <button class="edit"><i class="fas fa-edit"></i></button>
+        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+      </div>
+      <div class="note">
+        ${element}
+      </div>`;
+    container.appendChild(el);
+  });
+  addEventForEdit();
+  addEventForDelete();
+  current = false;
+}
+
+function addAnotherNote() {
+  note.push("");
+  const el = document.createElement("div");
+  el.classList.add("note-container");
+  el.innerHTML = `<div class="header">
+        <button class="edit"><i class="fas fa-edit"></i></button>
+        <button class="delete"><i class="fas fa-trash-alt"></i></button>
+      </div>
+      <div class="note">
+        <textarea rows = '20'></textarea>
+      </div>`;
+  container.appendChild(el);
+  document.querySelector("textarea").focus();
+
+  current = true;
+}
+
+loadNotes();
+
