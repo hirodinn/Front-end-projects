@@ -39,6 +39,26 @@ p {
   cursor: pointer;
   margin-top: 20px;
 }
+/* @keyframes rotate {
+  0% {
+    transform: rotate(140deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  55% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  85% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-180deg);
+  }
+} */
 @keyframes pop {
   0% {
     transform: scale(0.3) rotate(30deg);
