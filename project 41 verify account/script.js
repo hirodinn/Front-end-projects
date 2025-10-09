@@ -22,3 +22,24 @@ inputs.forEach((input) => {
   });
 });
 
+inputs.forEach((input) => {
+  input.addEventListener("keyup", (e) => {
+    if (e.key === "Backspace") {
+      if (current !== 0) {
+        inputs[current].setAttribute("readonly", "true");
+        inputs[current].classList.remove("valid");
+        current--;
+        inputs[current].removeAttribute("readonly");
+        makeFocus(current);
+        inputs[current].value = "";
+      }
+    }
+  });
+});
+
+function makeFocus(i) {
+  inputs[i].removeAttribute("readonly");
+  inputs[i].focus();
+}
+makeFocus(0);
+
