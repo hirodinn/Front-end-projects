@@ -28,3 +28,16 @@ function loadData(data) {
   });
 }
 
+input.addEventListener("input", () => {
+  const text = input.value.toLowerCase();
+  const filtered = data.filter((d) => {
+    return (
+      d.name.first.toLowerCase().includes(text) ||
+      d.name.last.toLowerCase().includes(text) ||
+      d.location.city.toLowerCase().includes(text) ||
+      d.location.country.toLowerCase().includes(text)
+    );
+  });
+  loadData(filtered);
+});
+
