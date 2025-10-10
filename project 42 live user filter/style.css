@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Muli, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  background-color: #f6f7fc;
+}
+.container {
+  width: 330px;
+  height: 550px;
+  box-shadow: 0 0 6px 2px lightgray;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.container header {
+  width: 100%;
+  height: 140px;
+  background-color: #374bd0;
+  color: white;
+  padding: 20px 20px;
+}
+.container header h2 {
+  text-align: center;
+}
+.container header h4 {
+  margin: 8px 0;
+  text-align: center;
+}
+.container header input {
+  background-color: #243590;
+  border: none;
+  font-size: 19px;
+  padding-left: 8px;
+  border-radius: 13px;
+  height: 30px;
+  margin-top: 10px;
+  color: white;
+}
+.container header input::placeholder {
+  font-size: inherit;
+}
+.container header input:focus {
+  outline: none;
+}
+.container main {
+  height: calc(100% - 140px);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+}
+.container main .each-container {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  border-bottom: 2px solid lightgray;
+}
+.each-container img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.each-container .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: none;
+}
+.each-container .info h4 {
+  font-size: 13px;
+  color: rgb(126, 126, 126);
+}
