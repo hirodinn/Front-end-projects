@@ -3,8 +3,7 @@ const todoContainer = document.querySelector(".todo-container");
 
 input.addEventListener("keyup", (e) => {
   if (e.key === "Enter") {
-    console.log("enter is clicked");
-    const todo = JSON.parse(localStorage.getItem("todo"));
+    const todo = JSON.parse(localStorage.getItem("todo")) || [];
     todo.push(input.value);
     input.value = "";
     localStorage.setItem("todo", JSON.stringify(todo));
@@ -13,7 +12,7 @@ input.addEventListener("keyup", (e) => {
 });
 
 function loadTodo() {
-  const todo = JSON.parse(localStorage.getItem("todo"));
+  const todo = JSON.parse(localStorage.getItem("todo")) || [];
   todoContainer.innerHTML = "";
   todo.forEach((t) => {
     const el = document.createElement("div");
@@ -37,7 +36,7 @@ function addEvent() {
       if (event.button === 0) {
         todo.classList.toggle("spoil");
       } else if (event.button === 2) {
-        const t = JSON.parse(localStorage.getItem("todo"));
+        const t = JSON.parse(localStorage.getItem("todo")) || [];
         t.splice(i, 1);
         localStorage.setItem("todo", JSON.stringify(t));
         loadTodo();
@@ -47,4 +46,3 @@ function addEvent() {
 }
 
 loadTodo();
-
