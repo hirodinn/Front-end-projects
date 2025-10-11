@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Muli, sans-serif;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main img {
+  width: 250px;
+}
+main h1 {
+  text-align: center;
+}
+button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+}
+.open-btn {
+  left: 0;
+  top: 0;
+}
+nav {
+  position: fixed;
+  left: 0;
+  height: 100vh;
+}
+nav > div {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+nav .black {
+  width: 300px;
+  background-color: black;
+  z-index: 1;
+}
+nav .red {
+  width: 270px;
+  background-color: red;
+  z-index: 2;
+}
+nav .white {
+  width: 240px;
+  background-color: white;
+  z-index: 3;
+  padding: 10px;
+  overflow: hidden;
+  padding-top: 0;
+}
+nav .white i {
+  color: rgb(131, 131, 131);
+}
+nav .white img {
+  width: 150px;
+}
+nav .white h3 {
+  margin-bottom: 23px;
+  color: rgb(100, 100, 100);
+}
+nav .white .to-right {
+  transform: translateX(20px);
+}
+.close-btn {
+  right: 20px;
+  top: 30px;
+}
+nav.hide .white {
+  transform: translateX(-240px);
+}
+nav.hide .red {
+  transform: translateX(-270px);
+}
+nav.hide .black {
+  transform: translateX(-300px);
+}
