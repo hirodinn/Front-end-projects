@@ -88,4 +88,16 @@ function loadEventListenerButton() {
   });
 }
 
+function loadFinal() {
+  container.classList.add("compress");
+  container.innerHTML = `<h1>You got ${score}/4</h1>
+  <button>Reload</button>
+  `;
+  document.querySelector("button").addEventListener("click", () => {
+    window.location.reload();
+  });
+}
+
+loadContainer();
+
 
