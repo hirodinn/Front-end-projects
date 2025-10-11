@@ -48,3 +48,30 @@ const testimonials = [
 let current = 0;
 const container = document.querySelector(".container");
 
+setInterval(() => {
+  current++;
+  if (current === 7) current = 0;
+  loadContainer();
+}, 3000);
+
+function loadContainer() {
+  container.innerHTML = `<div class="text-container">
+        <i class="fas fa-quote-right fa-quote"></i>
+        <p class="text">${testimonials[current].text}</p>
+        <i class="fas fa-quote-left fa-quote"></i>
+      </div>
+      <div class="info-container">
+        <img
+          src="${testimonials[current].photo}"
+        />
+        <div class="name-position">
+          <h3>${testimonials[current].name}</h3>
+          <h3>${testimonials[current].position}</h3>
+        </div>
+      </div>
+      <div class="progress"></div>`;
+}
+
+loadContainer();
+
+
