@@ -39,3 +39,8 @@ const questions = [
   ),
 ];
 
+let current = 0;
+let score = 0;
+const container = document.querySelector(".container");
+
+
