@@ -41,3 +41,33 @@ function start() {
   setInterval(startTimer, 1000);
 }
 
+const maxX = 1400;
+const maxY = 600;
+
+function returnRandomposition() {
+  return [Math.floor(Math.random() * maxX), Math.floor(Math.random() * maxY)];
+}
+
+function addEventForInsects() {
+  document.querySelectorAll(".insect").forEach((insect) => {
+    insect.addEventListener("click", () => {
+      gamePage.removeChild(insect);
+      score++;
+      updateScore();
+      addInsect();
+      addInsect();
+      addEventForInsects();
+    });
+  });
+}
+
+function addInsect() {
+  const el1 = document.createElement("div");
+  el1.classList.add("insect");
+  el1.style.backgroundImage = `url(${insectChoice})`;
+  const position = returnRandomposition();
+  el1.style.left = `${position[0]}px`;
+  el1.style.top = `${position[1]}px`;
+  gamePage.appendChild(el1);
+}
+
