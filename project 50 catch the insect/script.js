@@ -71,3 +71,14 @@ function addInsect() {
   gamePage.appendChild(el1);
 }
 
+function updateScore() {
+  if (score === 20) {
+    const el = document.createElement("div");
+    el.classList.add("warning");
+    el.innerHTML =
+      "<h3>Are you annoyed yet?</h3><h3>you are playing an impossible game!!</h3>";
+    gamePage.appendChild(el);
+  }
+  gamePage.querySelector(".score").innerText = `Score: ${score}`;
+}
+
